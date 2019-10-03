@@ -1,0 +1,42 @@
+<div align="center">
+    <h1>Hi prro!</h1>
+    <h1>{{titulo}} </h1>
+    <!-- <input [(ngModel)])="titulo" name="titulo" type="text"> -->
+
+    <ul>
+        <li *ngFor="let persona of listaNombres let i = index" [ngStyle]="{'color': persona.genero == 'F'?'pink':persona.genero == 'M'?'skyblue':'green'}">
+            <span *ngIf="i == 1"> primero </span> {{persona.nombre}}
+
+        </li>
+    </ul>
+
+    <!-- <ul>
+        <li *ngFor="let persona of listaNombres let i = index" [ngStyle]="{'color': persona.genero == 'F'?'pink':persona.genero == 'M'?'skyblue':'green'}">
+            <ng-container [ngSwitch]="persona.genero">
+                <h1 *ngSwitchCase="'F'">
+                    {{persona.nombre}}
+                </h1>
+                <h2 *ngSwitchCase="'M'">
+                    {{persona.nombre}}
+                </h2>
+                <h3 *ngSwitchCase="'O'">
+                    {{persona.nombre}}
+                </h3>
+                <h4 *ngSwitchDefault="">
+                    {{persona.genero}}
+                </h4>
+            </ng-container>
+
+        </li>
+    </ul> -->
+
+    <!-- llamada al segundo componente -->
+
+    <ul>
+        <li *ngFor="let persona of listaPersonas">
+            Nombre: {{persona.nombre}} Apellido: {{persona.apellido}} Genero: {{persona.genero}} Hijos: {{ persona.tieneHijos? 'si':'no' }}
+        </li>
+    </ul>
+    <hr>
+    <app-segundo [llegada]="titulo" (enviarPais)="quePais($event)" (enviarPersona)="personaRecibida($event)"></app-segundo>
+</div>

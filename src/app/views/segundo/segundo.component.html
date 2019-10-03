@@ -1,0 +1,16 @@
+<!-- <button (click)='enviar()' type="button" class="btn btn-warning">Le boton</button> -->
+<form>
+    <div class="form-group">
+        <label>Nombre :</label><br>
+        <input class="col-md-8" type='text' [(ngModel)]='persona.nombre' name="nombre"><br>
+        <label>Apellido :</label><br>
+        <input class="col-md-8" type='text' [(ngModel)]='persona.apellido' name="apellido"><br>
+        <label>Genero :</label><br>
+        <input class="col-md-8" type='text' [(ngModel)]='persona.genero' name="genero"><br>
+        <label>Identificación :</label><br>
+        <input class="col-md-8" type='number' [(ngModel)]='persona.identificacion' name="identificacion"><br>
+        <label>Hijos  :</label> &nbsp; &nbsp; &nbsp;<br>
+        <input class="col-md-8" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="1" [(ngModel)]='persona.tieneHijos' name="hijos"><br>
+        <button (click)='emitirPersona()' type=" button " class="btn btn-warning ">Emitir persona</button>
+    </div>
+</form>
